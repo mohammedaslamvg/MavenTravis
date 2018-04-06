@@ -20,7 +20,7 @@ public class AppTest {
 	   public void justAnExample() throws InterruptedException {
 	        System.out.println("Selenium Automation testing Starts here....");
 	        Thread.sleep(2000);
-	        System.out.println("Login to the application succesfully");
+	        
 	        System.out.println("Selenium Automation testing Ends here....");
 	        String obj1="Junit";
 	        String obj2="Junit";
@@ -40,6 +40,8 @@ public class AppTest {
 //	        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
 //	        WebDriver driver= new ChromeDriver();
 	        driver.get("https://www.google.com");
+	        System.out.println("Login to the application succesfully");
+	        
 	        
 	    }
 }
