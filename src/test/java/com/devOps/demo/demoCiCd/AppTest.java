@@ -7,6 +7,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 
 /**
@@ -23,9 +25,21 @@ public class AppTest {
 	        String obj1="Junit";
 	        String obj2="Junit";
 	        assertEquals(obj1,obj2);
+	        final ChromeOptions chromeOptions = new ChromeOptions();
+	        chromeOptions.setBinary("/path/to/google-chrome-stable");
+	        chromeOptions.addArguments("--headless");
+	        chromeOptions.addArguments("--disable-gpu");
+
+	        final DesiredCapabilities dc = new DesiredCapabilities();
+	        dc.setJavascriptEnabled(true);
+	        dc.setCapability(
+	            ChromeOptions.CAPABILITY, chromeOptions
+	        );
+
+	        WebDriver driver = new ChromeDriver(dc);
 //	        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
 //	        WebDriver driver= new ChromeDriver();
-//	        driver.get("https://www.google.com");
+	        driver.get("https://www.google.com");
 	        
 	    }
 }
