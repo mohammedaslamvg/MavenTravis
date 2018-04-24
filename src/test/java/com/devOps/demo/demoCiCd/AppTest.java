@@ -5,6 +5,7 @@ package com.devOps.demo.demoCiCd;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -27,8 +28,8 @@ public class AppTest {
 	        assertEquals(obj1,obj2);
 	        final ChromeOptions chromeOptions = new ChromeOptions();
 	        chromeOptions.setBinary("/path/to/google-chrome-stable");
-//	        chromeOptions.addArguments("--headless");
-//	        chromeOptions.addArguments("--disable-gpu");
+	        chromeOptions.addArguments("--headless");
+	        chromeOptions.addArguments("--disable-gpu");
 
 	        final DesiredCapabilities dc = new DesiredCapabilities();
 	        dc.setJavascriptEnabled(true);
@@ -39,8 +40,13 @@ public class AppTest {
 	        WebDriver driver = new ChromeDriver(dc);
 //	        System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
 //	        WebDriver driver= new ChromeDriver();
-	        driver.get("https://www.google.com");
+	        driver.get("https://in.musafir.com/");
+	        Thread.sleep(5000);
 	        System.out.println("Login to the application succesfully");
+	        driver.findElement(By.name("Origin")).sendKeys("Kochi");
+	        System.out.println("Entered Value in to the application succesfully");
+	        
+	       
 	        
 	        
 	    }
