@@ -30,6 +30,7 @@ public class AppTest {
 	        chromeOptions.setBinary("/path/to/google-chrome-stable");
 	        chromeOptions.addArguments("--headless");
 	        chromeOptions.addArguments("--disable-gpu");
+	        chromeOptions.addArguments("--no-sandbox");
 
 	        final DesiredCapabilities dc = new DesiredCapabilities();
 	        dc.setJavascriptEnabled(true);
