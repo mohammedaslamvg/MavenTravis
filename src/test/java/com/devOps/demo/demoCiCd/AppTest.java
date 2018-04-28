@@ -27,7 +27,8 @@ public class AppTest {
 	        String obj2="Junit";
 	        assertEquals(obj1,obj2);
 	        final ChromeOptions chromeOptions = new ChromeOptions();
-	        chromeOptions.setBinary("/path/to/google-chrome-stable");
+	        //chromeOptions.setBinary("/path/to/google-chrome-stable");
+		chromeOptions.setBinary("/usr/bin/google-chrome-stable");
 	        chromeOptions.addArguments("--headless");
 	        chromeOptions.addArguments("--disable-gpu");
 	        chromeOptions.addArguments("--no-sandbox");
